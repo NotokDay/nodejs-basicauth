@@ -1,0 +1,6 @@
+This application use jwt to create basic authentication (register, login, logout).
+
+1. configure database
+2. npm i to install dependencies
+3. node app.js
+
