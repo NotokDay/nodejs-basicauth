@@ -1,0 +1,7 @@
+POST http://localhost:8080
+Content-Type: application/json
+Cookie: Session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6Ik9rZGF5IE5hYmlsaSIsImlhdCI6MTY3MDc4MzQ4MCwiZXhwIjoxNjcwNzg3MDgwfQ.vjtxyE4NRrXRbMp0DeKgWyn_ulRtxlDI6zsVJf4ruw8
+
+{
+    "productCode": "HEY"
+}

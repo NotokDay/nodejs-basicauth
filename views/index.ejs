@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome, <%= name %>!</h1>
+    <%if (productCodes.length !== 0) {%>
+    <p>Please choose a product code to display related products.</p>
+    <form action="/" method="POST">
+        <select name="productCode">
+            <% for(let i = 0; i < productCodes.length; i++){%>
+                <option> <%= productCodes[i].productCode %> </option>
+            <% } %>
+        </select>
+        <input type="submit">
+    </form><br>
+    <% } %>
+
+    <% if(products.length !== 0){%>
+        <style>
+            table, th, td {border: 1px solid;}
+        </style>
+        <p>Here are the related products.</p>
+        <% var totalAmount = 0 %>
+        <table>
+            <tr>
+                <th>productID</th><th>productCode</th><th>name</th><th>quantity</th><th>price</th><th>Delete</th>
+            </tr>
+            <% for(let i = 0; i < products.length; i++){ %>
+                <% totalAmount += products[i].price*products[i].quantity %>
+                <tr>
+                    <td><%= products[i].productID %></td>
+                    <td><%= products[i].productCode %></td>
+                    <td><%= products[i].name %></td>
+                    <td><%= products[i].quantity %></td>
+                    <td><%= products[i].price %></td>
+                    <td><a href="/delete/<%= products[i].productID %>"><button>Delete</button></a></td>
+                </tr>
+            <%}%>
+        </table>
+        <p>Total amount: <%= totalAmount %></p>
+    <%}%>
+    <a href="/logout">Log out</a>
+</body>
+</html>
