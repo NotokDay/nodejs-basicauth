@@ -71,6 +71,7 @@ app.post('/register',
         const errors = validationResult(req).errors
         if(errors.length !== 0) return res.render('register.ejs', {message: `${errors[0].msg}`})
         
+        //to-do: forgot to check existence of user before pushing to the db
         let fullName = req.body.fullName
         let username = req.body.username
         let plainPassword = req.body.password
